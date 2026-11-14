@@ -1,0 +1,59 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "elliptic-fraud"
+version = "0.1.0"
+description = "Graph neural network-based cryptocurrency fraud detection using the Elliptic dataset."
+readme = "README.md"
+requires-python = ">=3.11,<3.12"
+license = { text = "MIT" }
+dependencies = [
+    "torch==2.12.1",
+    "torch-geometric==2.8.0.post1",
+    "numpy==2.4.6",
+    "pandas==2.3.3",
+    "scikit-learn==1.9.0",
+    "xgboost==3.2.0",
+    "shap==0.51.0",
+    "mlflow==3.16.1",
+    "dvc==3.67.1",
+    "evidently==0.7.21",
+    "streamlit==1.66.1",
+    "fastapi==0.163.0",
+    "uvicorn==0.54.0",
+    "pydantic==2.14.3",
+    "networkx==3.6.1",
+    "pyvis==0.3.2",
+    "pandera==0.36.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest==9.2.0",
+    "pytest-cov==7.1.0",
+    "ruff==0.17.5",
+    "ipykernel==7.4.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-ra"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+src = ["src"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+ignore = []
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
