@@ -1,0 +1,61 @@
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Virtual environments
+.venv/
+venv/
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Data
+data/raw/*
+data/interim/*
+data/processed/*
+!data/raw/.gitkeep
+!data/interim/.gitkeep
+!data/processed/.gitkeep
+
+# Model artifacts
+models/
+*.pt
+*.pth
+*.ckpt
+*.pkl
+
+# Experiment tracking
+mlruns/
+logs/
+outputs/
+
+# macOS and IDE
+.DS_Store
+.vscode/
+.idea/
+# Additional Python tooling
+.pytest_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+build/
+dist/
+*.spec
+
+# MLflow local databases and artifacts
+*.db
+mlartifacts/
+
+# Keep local experiment tracking out of Git
+mlruns/
+
+# --- elliptic-fraud-gnn rules ---
+.mypy_cache/
