@@ -1,0 +1,11 @@
+{
+    "model": "xgboost",
+    "random_seed": 42,
+    "feature_count": 165,
+    "training_samples": 26381,
+    "validation_samples": 3513,
+    "test_samples": 16670,
+    "scale_pos_weight": 8.188784395680948,
+    "best_iteration": 0,
+    "validation_selected_threshold": 0.5244208574295044
+}
