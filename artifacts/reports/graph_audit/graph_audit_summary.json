@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "nodes": 203769,
+  "edges": 234355,
+  "features": 165,
+  "time_steps": 49,
+  "label_counts": {
+    "-1": 157205,
+    "0": 42019,
+    "1": 4545
+  },
+  "cross_step_edges": 0,
+  "duplicate_edges": 0,
+  "self_loops": 0,
+  "reciprocal_edge_count": 0,
+  "scaler_training_rows": 120804,
+  "scaler_features": 165,
+  "all_features_finite": true,
+  "all_scaled_features_finite": true,
+  "all_snapshot_statistics_generated": true,
+  "all_snapshots_acyclic": true,
+  "all_snapshots_have_one_weak_component": true,
+  "total_isolated_nodes": 0,
+  "per_step_report": "artifacts/reports/graph_audit/per_step_graph_audit.csv"
+}
