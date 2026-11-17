@@ -1,43 +1,58 @@
+
+# Elliptic Sentinel - Project Configuration
+
 project:
-  name: elliptic-sentinel
+  name: elliptic_sentinel
   random_seed: 42
 
+# Dataset configuration
 data:
-  raw_dir: data/raw
-  interim_dir: data/interim
-  processed_dir: data/processed
-  artifacts_dir: artifacts
+  raw_dir: data/raw/elliptic
+  interim_dir: data/interim/elliptic
+  processed_dir: data/processed/elliptic
 
-  local_feature_count: 93
-  aggregated_feature_count: 72
-  total_feature_count: 165
+  features_file: elliptic_txs_features.csv
+  edges_file: elliptic_txs_edgelist.csv
+  classes_file: elliptic_txs_classes.csv
 
-  first_step: 1
-  last_step: 49
+  num_local_features: 93
+  num_aggregated_features: 72
+  num_features: 165
 
+  min_time_step: 1
+  max_time_step: 49
+
+# Temporal data split
 split:
   train:
-    start_step: 1
-    end_step: 29
-  validation:
-    start_step: 30
-    end_step: 34
-  test:
-    start_step: 35
-    end_step: 49
+    start_time_step: 1
+    end_time_step: 29
 
+  validation:
+    start_time_step: 30
+    end_time_step: 34
+
+  test:
+    start_time_step: 35
+    end_time_step: 49
+
+# Feature preprocessing
 preprocessing:
   scaler: standard
-  fit_scaler_on: train_only
-  preserve_unlabeled_nodes: true
+  fit_on: train_only
+  preserve_unlabeled: true
 
+# General training configuration
 training:
   random_seed: 42
   device: cpu
   batch_size: 256
   num_workers: 0
 
-tabular_model:
+# XGBoost baseline
+tabular:
+  model: xgboost
+
   xgboost:
     objective: binary:logistic
     eval_metric: aucpr
@@ -48,19 +63,42 @@ tabular_model:
     colsample_bytree: 0.8
     random_state: 42
 
+# Directed GraphSAGE configuration
 gnn:
-  model: gcn
+  model: directed_graphsage
+
   num_layers: 2
   hidden_channels: 64
   dropout: 0.3
-  learning_rate: 0.001
-  weight_decay: 0.0001
-  epochs: 100
-  early_stopping_patience: 10
+  aggregation: mean
 
+  # Degree features
+  use_degree_features: true
+  degree_features:
+    - log_in_degree
+    - log_out_degree
+
+  # Learning-rate pilot
+  learning_rate_candidates:
+    - 0.001
+    - 0.005
+    - 0.01
+
+  optimizer: adam
+  loss: weighted_bce
+
+  weight_decay: 0.0001
+  max_epochs: 500
+  early_stopping_patience: 50
+
+  device: cpu
+  random_state: 42
+
+# Evaluation configuration
 evaluation:
   primary_metric: average_precision
   threshold_selection: validation_only
+
   report_metrics:
     - average_precision
     - roc_auc
@@ -69,8 +107,12 @@ evaluation:
     - f1
     - confusion_matrix
 
+# Monitoring configuration
 monitoring:
   mode: simulated_chronological_replay
-  first_replay_step: 35
-  last_replay_step: 49
+
+  replay:
+    start_time_step: 35
+    end_time_step: 49
+
   show_simulated_replay_banner: true
