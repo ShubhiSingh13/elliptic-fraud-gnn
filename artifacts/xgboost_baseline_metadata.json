@@ -2,10 +2,30 @@
     "model": "xgboost",
     "random_seed": 42,
     "feature_count": 165,
+    "feature_source": "data/processed/elliptic/scaled_features.pt",
     "training_samples": 26381,
     "validation_samples": 3513,
     "test_samples": 16670,
+    "training_positive_count": 2871,
+    "training_negative_count": 23510,
     "scale_pos_weight": 8.188784395680948,
     "best_iteration": 0,
-    "validation_selected_threshold": 0.5244208574295044
+    "early_stopping_rounds": 50,
+    "validation_average_precision": 0.9300546186823582,
+    "validation_selected_f1": 0.9202453987725069,
+    "validation_selected_threshold": 0.5244208574295044,
+    "threshold_source": "validation",
+    "test_status": "exploratory",
+    "hyperparameters": {
+        "objective": "binary:logistic",
+        "eval_metric": "aucpr",
+        "n_estimators": 500,
+        "max_depth": 6,
+        "learning_rate": 0.05,
+        "subsample": 0.8,
+        "colsample_bytree": 0.8,
+        "tree_method": "hist",
+        "device": "cpu",
+        "n_jobs": 1
+    }
 }

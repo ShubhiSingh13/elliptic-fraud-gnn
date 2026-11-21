@@ -15,5 +15,10 @@
             722
         ]
     ],
-    "threshold": 0.5244208574295044
+    "threshold": 0.5244208574295044,
+    "sample_count": 16670,
+    "positive_count": 1083,
+    "negative_count": 15587,
+    "evaluation_status": "exploratory",
+    "threshold_source": "validation"
 }

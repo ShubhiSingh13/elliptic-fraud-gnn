@@ -1,4 +1,3 @@
-
 """
 Elliptic Sentinel
 XGBoost Temporal Performance Diagnostic
@@ -16,8 +15,8 @@ model selection or hyperparameter tuning.
 from pathlib import Path
 
 import numpy as np
-import torch
 from xgboost import XGBClassifier
+import torch
 from sklearn.metrics import average_precision_score, roc_auc_score
 
 

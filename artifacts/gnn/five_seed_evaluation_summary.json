@@ -1,0 +1,855 @@
+{
+  "project": "Elliptic Sentinel",
+  "evaluation_status": "completed",
+  "test_status": "exploratory",
+  "test_holdout_warning": "Test-period results are exploratory because test data was inspected during development. They are not results from an untouched holdout.",
+  "device": "cpu",
+  "experiment": "final_five_seed_directed_graphsage",
+  "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "learning_rate": 0.01,
+  "validation_calibration": {
+    "period": {
+      "start_time_step": 30,
+      "end_time_step": 34,
+      "transaction_count": 15461,
+      "labelled_target_count": 3513
+    },
+    "per_seed": [
+      {
+        "seed": 42,
+        "checkpoint": "/Users/shubhisingh/Projects/elliptic-fraud-gnn/artifacts/gnn/final_five_seed/gnn_seed_42_lr_0.01.pt",
+        "best_epoch": 130,
+        "best_validation_average_precision": 0.9455689513706658,
+        "f1_threshold": 0.943953275680542,
+        "f1_calibration": {
+          "method": "validation_f1_max",
+          "threshold": 0.943953275680542,
+          "validation_f1": 0.8915871639202081,
+          "validation_precision": 0.9145907473309609,
+          "validation_recall": 0.8697123519458545,
+          "selection_data": "labelled_validation_targets_only"
+        },
+        "capacity_calibration": {
+          "method": "deterministic_top_fraction",
+          "requested_fraction": 0.01,
+          "threshold": 1.0,
+          "transaction_count": 15461,
+          "target_alert_count": 155,
+          "actual_alert_count": 155,
+          "actual_alert_rate": 0.010025224759071211,
+          "selection_data": "all_period_transactions_without_labels",
+          "tie_break": "ascending_transaction_id"
+        }
+      },
+      {
+        "seed": 43,
+        "checkpoint": "/Users/shubhisingh/Projects/elliptic-fraud-gnn/artifacts/gnn/final_five_seed/gnn_seed_43_lr_0.01.pt",
+        "best_epoch": 45,
+        "best_validation_average_precision": 0.9365740395276608,
+        "f1_threshold": 0.9225103259086609,
+        "f1_calibration": {
+          "method": "validation_f1_max",
+          "threshold": 0.9225103259086609,
+          "validation_f1": 0.8793706293706294,
+          "validation_precision": 0.9095840867992767,
+          "validation_recall": 0.8510998307952623,
+          "selection_data": "labelled_validation_targets_only"
+        },
+        "capacity_calibration": {
+          "method": "deterministic_top_fraction",
+          "requested_fraction": 0.01,
+          "threshold": 0.9999998807907104,
+          "transaction_count": 15461,
+          "target_alert_count": 155,
+          "actual_alert_count": 155,
+          "actual_alert_rate": 0.010025224759071211,
+          "selection_data": "all_period_transactions_without_labels",
+          "tie_break": "ascending_transaction_id"
+        }
+      },
+      {
+        "seed": 44,
+        "checkpoint": "/Users/shubhisingh/Projects/elliptic-fraud-gnn/artifacts/gnn/final_five_seed/gnn_seed_44_lr_0.01.pt",
+        "best_epoch": 44,
+        "best_validation_average_precision": 0.9368252039985497,
+        "f1_threshold": 0.8830533623695374,
+        "f1_calibration": {
+          "method": "validation_f1_max",
+          "threshold": 0.8830533623695374,
+          "validation_f1": 0.8798617113223854,
+          "validation_precision": 0.8992932862190812,
+          "validation_recall": 0.8612521150592216,
+          "selection_data": "labelled_validation_targets_only"
+        },
+        "capacity_calibration": {
+          "method": "deterministic_top_fraction",
+          "requested_fraction": 0.01,
+          "threshold": 1.0,
+          "transaction_count": 15461,
+          "target_alert_count": 155,
+          "actual_alert_count": 155,
+          "actual_alert_rate": 0.010025224759071211,
+          "selection_data": "all_period_transactions_without_labels",
+          "tie_break": "ascending_transaction_id"
+        }
+      },
+      {
+        "seed": 45,
+        "checkpoint": "/Users/shubhisingh/Projects/elliptic-fraud-gnn/artifacts/gnn/final_five_seed/gnn_seed_45_lr_0.01.pt",
+        "best_epoch": 166,
+        "best_validation_average_precision": 0.9516077263356607,
+        "f1_threshold": 0.9372947216033936,
+        "f1_calibration": {
+          "method": "validation_f1_max",
+          "threshold": 0.9372947216033936,
+          "validation_f1": 0.8927943760984183,
+          "validation_precision": 0.9287020109689214,
+          "validation_recall": 0.8595600676818951,
+          "selection_data": "labelled_validation_targets_only"
+        },
+        "capacity_calibration": {
+          "method": "deterministic_top_fraction",
+          "requested_fraction": 0.01,
+          "threshold": 1.0,
+          "transaction_count": 15461,
+          "target_alert_count": 155,
+          "actual_alert_count": 155,
+          "actual_alert_rate": 0.010025224759071211,
+          "selection_data": "all_period_transactions_without_labels",
+          "tie_break": "ascending_transaction_id"
+        }
+      },
+      {
+        "seed": 46,
+        "checkpoint": "/Users/shubhisingh/Projects/elliptic-fraud-gnn/artifacts/gnn/final_five_seed/gnn_seed_46_lr_0.01.pt",
+        "best_epoch": 46,
+        "best_validation_average_precision": 0.9311418458427888,
+        "f1_threshold": 0.788489580154419,
+        "f1_calibration": {
+          "method": "validation_f1_max",
+          "threshold": 0.788489580154419,
+          "validation_f1": 0.8722538649308381,
+          "validation_precision": 0.8401253918495298,
+          "validation_recall": 0.9069373942470389,
+          "selection_data": "labelled_validation_targets_only"
+        },
+        "capacity_calibration": {
+          "method": "deterministic_top_fraction",
+          "requested_fraction": 0.01,
+          "threshold": 1.0,
+          "transaction_count": 15461,
+          "target_alert_count": 155,
+          "actual_alert_count": 155,
+          "actual_alert_rate": 0.010025224759071211,
+          "selection_data": "all_period_transactions_without_labels",
+          "tie_break": "ascending_transaction_id"
+        }
+      }
+    ],
+    "frozen_thresholds": {
+      "42": {
+        "f1_threshold": 0.943953275680542,
+        "capacity_fraction": 0.01,
+        "capacity_tie_break": "ascending_transaction_id"
+      },
+      "43": {
+        "f1_threshold": 0.9225103259086609,
+        "capacity_fraction": 0.01,
+        "capacity_tie_break": "ascending_transaction_id"
+      },
+      "44": {
+        "f1_threshold": 0.8830533623695374,
+        "capacity_fraction": 0.01,
+        "capacity_tie_break": "ascending_transaction_id"
+      },
+      "45": {
+        "f1_threshold": 0.9372947216033936,
+        "capacity_fraction": 0.01,
+        "capacity_tie_break": "ascending_transaction_id"
+      },
+      "46": {
+        "f1_threshold": 0.788489580154419,
+        "capacity_fraction": 0.01,
+        "capacity_tie_break": "ascending_transaction_id"
+      }
+    }
+  },
+  "test_evaluation": {
+    "period": {
+      "start_time_step": 35,
+      "end_time_step": 49,
+      "transaction_count": 67504,
+      "labelled_target_count": 16670
+    },
+    "per_seed": [
+      {
+        "seed": 42,
+        "checkpoint": "/Users/shubhisingh/Projects/elliptic-fraud-gnn/artifacts/gnn/final_five_seed/gnn_seed_42_lr_0.01.pt",
+        "best_epoch": 130,
+        "f1_threshold": 0.943953275680542,
+        "f1_threshold_metrics": {
+          "average_precision": 0.387360210428345,
+          "roc_auc": 0.8809807057411825,
+          "accuracy": 0.9320335932813437,
+          "precision": 0.4791318864774624,
+          "recall": 0.5300092336103417,
+          "f1": 0.503288031565103,
+          "confusion_matrix": {
+            "true_negative": 14963,
+            "false_positive": 624,
+            "false_negative": 509,
+            "true_positive": 574
+          },
+          "sample_count": 16670,
+          "positive_count": 1083,
+          "negative_count": 15587,
+          "alert_count": 1198,
+          "alert_rate": 0.07186562687462507
+        },
+        "f1_threshold_alert_rate": {
+          "transaction_count": 67504,
+          "alert_count": 5729,
+          "alert_rate": 0.08486904479734535
+        },
+        "capacity_metrics": {
+          "average_precision": 0.387360210428345,
+          "roc_auc": 0.8809807057411825,
+          "accuracy": 0.9332333533293341,
+          "precision": 0.3611111111111111,
+          "recall": 0.036011080332409975,
+          "f1": 0.06549118387909321,
+          "confusion_matrix": {
+            "true_negative": 15518,
+            "false_positive": 69,
+            "false_negative": 1044,
+            "true_positive": 39
+          },
+          "sample_count": 16670,
+          "positive_count": 1083,
+          "negative_count": 15587,
+          "alert_count": 108,
+          "alert_rate": 0.00647870425914817
+        },
+        "capacity_alert_rate": {
+          "transaction_count": 67504,
+          "alert_count": 676,
+          "alert_rate": 0.010014221379473809
+        },
+        "capacity_selection": {
+          "method": "deterministic_top_fraction",
+          "requested_fraction": 0.01,
+          "threshold": 1.0,
+          "transaction_count": 67504,
+          "target_alert_count": 676,
+          "actual_alert_count": 676,
+          "actual_alert_rate": 0.010014221379473809,
+          "selection_data": "all_period_transactions_without_labels",
+          "tie_break": "ascending_transaction_id"
+        }
+      },
+      {
+        "seed": 43,
+        "checkpoint": "/Users/shubhisingh/Projects/elliptic-fraud-gnn/artifacts/gnn/final_five_seed/gnn_seed_43_lr_0.01.pt",
+        "best_epoch": 45,
+        "f1_threshold": 0.9225103259086609,
+        "f1_threshold_metrics": {
+          "average_precision": 0.3705687801642065,
+          "roc_auc": 0.8740679678314688,
+          "accuracy": 0.929874025194961,
+          "precision": 0.46362098138747887,
+          "recall": 0.5060018467220684,
+          "f1": 0.48388520971302434,
+          "confusion_matrix": {
+            "true_negative": 14953,
+            "false_positive": 634,
+            "false_negative": 535,
+            "true_positive": 548
+          },
+          "sample_count": 16670,
+          "positive_count": 1083,
+          "negative_count": 15587,
+          "alert_count": 1182,
+          "alert_rate": 0.07090581883623276
+        },
+        "f1_threshold_alert_rate": {
+          "transaction_count": 67504,
+          "alert_count": 4987,
+          "alert_rate": 0.07387710357904717
+        },
+        "capacity_metrics": {
+          "average_precision": 0.3705687801642065,
+          "roc_auc": 0.8740679678314688,
+          "accuracy": 0.9356928614277145,
+          "precision": 0.5679012345679012,
+          "recall": 0.04247460757156048,
+          "f1": 0.07903780068728522,
+          "confusion_matrix": {
+            "true_negative": 15552,
+            "false_positive": 35,
+            "false_negative": 1037,
+            "true_positive": 46
+          },
+          "sample_count": 16670,
+          "positive_count": 1083,
+          "negative_count": 15587,
+          "alert_count": 81,
+          "alert_rate": 0.0048590281943611275
+        },
+        "capacity_alert_rate": {
+          "transaction_count": 67504,
+          "alert_count": 676,
+          "alert_rate": 0.010014221379473809
+        },
+        "capacity_selection": {
+          "method": "deterministic_top_fraction",
+          "requested_fraction": 0.01,
+          "threshold": 0.9999996423721313,
+          "transaction_count": 67504,
+          "target_alert_count": 676,
+          "actual_alert_count": 676,
+          "actual_alert_rate": 0.010014221379473809,
+          "selection_data": "all_period_transactions_without_labels",
+          "tie_break": "ascending_transaction_id"
+        }
+      },
+      {
+        "seed": 44,
+        "checkpoint": "/Users/shubhisingh/Projects/elliptic-fraud-gnn/artifacts/gnn/final_five_seed/gnn_seed_44_lr_0.01.pt",
+        "best_epoch": 44,
+        "f1_threshold": 0.8830533623695374,
+        "f1_threshold_metrics": {
+          "average_precision": 0.3612135579570375,
+          "roc_auc": 0.8728444418932105,
+          "accuracy": 0.9272945410917817,
+          "precision": 0.4469135802469136,
+          "recall": 0.5013850415512465,
+          "f1": 0.4725848563968668,
+          "confusion_matrix": {
+            "true_negative": 14915,
+            "false_positive": 672,
+            "false_negative": 540,
+            "true_positive": 543
+          },
+          "sample_count": 16670,
+          "positive_count": 1083,
+          "negative_count": 15587,
+          "alert_count": 1215,
+          "alert_rate": 0.07288542291541691
+        },
+        "f1_threshold_alert_rate": {
+          "transaction_count": 67504,
+          "alert_count": 5367,
+          "alert_rate": 0.07950639962076321
+        },
+        "capacity_metrics": {
+          "average_precision": 0.3612135579570375,
+          "roc_auc": 0.8728444418932105,
+          "accuracy": 0.9344331133773245,
+          "precision": 0.42424242424242425,
+          "recall": 0.02585410895660203,
+          "f1": 0.04873803307223673,
+          "confusion_matrix": {
+            "true_negative": 15549,
+            "false_positive": 38,
+            "false_negative": 1055,
+            "true_positive": 28
+          },
+          "sample_count": 16670,
+          "positive_count": 1083,
+          "negative_count": 15587,
+          "alert_count": 66,
+          "alert_rate": 0.003959208158368326
+        },
+        "capacity_alert_rate": {
+          "transaction_count": 67504,
+          "alert_count": 676,
+          "alert_rate": 0.010014221379473809
+        },
+        "capacity_selection": {
+          "method": "deterministic_top_fraction",
+          "requested_fraction": 0.01,
+          "threshold": 0.9999998807907104,
+          "transaction_count": 67504,
+          "target_alert_count": 676,
+          "actual_alert_count": 676,
+          "actual_alert_rate": 0.010014221379473809,
+          "selection_data": "all_period_transactions_without_labels",
+          "tie_break": "ascending_transaction_id"
+        }
+      },
+      {
+        "seed": 45,
+        "checkpoint": "/Users/shubhisingh/Projects/elliptic-fraud-gnn/artifacts/gnn/final_five_seed/gnn_seed_45_lr_0.01.pt",
+        "best_epoch": 166,
+        "f1_threshold": 0.9372947216033936,
+        "f1_threshold_metrics": {
+          "average_precision": 0.4350203448882102,
+          "roc_auc": 0.874783310499593,
+          "accuracy": 0.9386922615476905,
+          "precision": 0.5279048490393413,
+          "recall": 0.5327793167128347,
+          "f1": 0.5303308823529411,
+          "confusion_matrix": {
+            "true_negative": 15071,
+            "false_positive": 516,
+            "false_negative": 506,
+            "true_positive": 577
+          },
+          "sample_count": 16670,
+          "positive_count": 1083,
+          "negative_count": 15587,
+          "alert_count": 1093,
+          "alert_rate": 0.06556688662267547
+        },
+        "f1_threshold_alert_rate": {
+          "transaction_count": 67504,
+          "alert_count": 4666,
+          "alert_rate": 0.06912182981749229
+        },
+        "capacity_metrics": {
+          "average_precision": 0.4350203448882102,
+          "roc_auc": 0.874783310499593,
+          "accuracy": 0.9348530293941212,
+          "precision": 0.47761194029850745,
+          "recall": 0.029547553093259463,
+          "f1": 0.05565217391304348,
+          "confusion_matrix": {
+            "true_negative": 15552,
+            "false_positive": 35,
+            "false_negative": 1051,
+            "true_positive": 32
+          },
+          "sample_count": 16670,
+          "positive_count": 1083,
+          "negative_count": 15587,
+          "alert_count": 67,
+          "alert_rate": 0.004019196160767846
+        },
+        "capacity_alert_rate": {
+          "transaction_count": 67504,
+          "alert_count": 676,
+          "alert_rate": 0.010014221379473809
+        },
+        "capacity_selection": {
+          "method": "deterministic_top_fraction",
+          "requested_fraction": 0.01,
+          "threshold": 1.0,
+          "transaction_count": 67504,
+          "target_alert_count": 676,
+          "actual_alert_count": 676,
+          "actual_alert_rate": 0.010014221379473809,
+          "selection_data": "all_period_transactions_without_labels",
+          "tie_break": "ascending_transaction_id"
+        }
+      },
+      {
+        "seed": 46,
+        "checkpoint": "/Users/shubhisingh/Projects/elliptic-fraud-gnn/artifacts/gnn/final_five_seed/gnn_seed_46_lr_0.01.pt",
+        "best_epoch": 46,
+        "f1_threshold": 0.788489580154419,
+        "f1_threshold_metrics": {
+          "average_precision": 0.3215862430271458,
+          "roc_auc": 0.8674869100674076,
+          "accuracy": 0.9232753449310138,
+          "precision": 0.43296853625171,
+          "recall": 0.5844875346260388,
+          "f1": 0.4974459724950884,
+          "confusion_matrix": {
+            "true_negative": 14758,
+            "false_positive": 829,
+            "false_negative": 450,
+            "true_positive": 633
+          },
+          "sample_count": 16670,
+          "positive_count": 1083,
+          "negative_count": 15587,
+          "alert_count": 1462,
+          "alert_rate": 0.08770245950809838
+        },
+        "f1_threshold_alert_rate": {
+          "transaction_count": 67504,
+          "alert_count": 6966,
+          "alert_rate": 0.10319388480682626
+        },
+        "capacity_metrics": {
+          "average_precision": 0.3215862430271458,
+          "roc_auc": 0.8674869100674076,
+          "accuracy": 0.9332333533293341,
+          "precision": 0.33695652173913043,
+          "recall": 0.028624192059095107,
+          "f1": 0.05276595744680851,
+          "confusion_matrix": {
+            "true_negative": 15526,
+            "false_positive": 61,
+            "false_negative": 1052,
+            "true_positive": 31
+          },
+          "sample_count": 16670,
+          "positive_count": 1083,
+          "negative_count": 15587,
+          "alert_count": 92,
+          "alert_rate": 0.005518896220755849
+        },
+        "capacity_alert_rate": {
+          "transaction_count": 67504,
+          "alert_count": 676,
+          "alert_rate": 0.010014221379473809
+        },
+        "capacity_selection": {
+          "method": "deterministic_top_fraction",
+          "requested_fraction": 0.01,
+          "threshold": 0.9999996423721313,
+          "transaction_count": 67504,
+          "target_alert_count": 676,
+          "actual_alert_count": 676,
+          "actual_alert_rate": 0.010014221379473809,
+          "selection_data": "all_period_transactions_without_labels",
+          "tie_break": "ascending_transaction_id"
+        }
+      }
+    ],
+    "f1_threshold_metrics_mean_and_std": {
+      "average_precision": {
+        "mean": 0.375149827292989,
+        "standard_deviation": 0.04128509261415151,
+        "per_seed": [
+          0.387360210428345,
+          0.3705687801642065,
+          0.3612135579570375,
+          0.4350203448882102,
+          0.3215862430271458
+        ]
+      },
+      "roc_auc": {
+        "mean": 0.8740326672065726,
+        "standard_deviation": 0.004824385113310864,
+        "per_seed": [
+          0.8809807057411825,
+          0.8740679678314688,
+          0.8728444418932105,
+          0.874783310499593,
+          0.8674869100674076
+        ]
+      },
+      "accuracy": {
+        "mean": 0.9302339532093582,
+        "standard_deviation": 0.0057439882764274515,
+        "per_seed": [
+          0.9320335932813437,
+          0.929874025194961,
+          0.9272945410917817,
+          0.9386922615476905,
+          0.9232753449310138
+        ]
+      },
+      "precision": {
+        "mean": 0.47010796668058125,
+        "standard_deviation": 0.0366787014890832,
+        "per_seed": [
+          0.4791318864774624,
+          0.46362098138747887,
+          0.4469135802469136,
+          0.5279048490393413,
+          0.43296853625171
+        ]
+      },
+      "recall": {
+        "mean": 0.530932594644506,
+        "standard_deviation": 0.033041620194058874,
+        "per_seed": [
+          0.5300092336103417,
+          0.5060018467220684,
+          0.5013850415512465,
+          0.5327793167128347,
+          0.5844875346260388
+        ]
+      },
+      "f1": {
+        "mean": 0.49750699050460473,
+        "standard_deviation": 0.021894621002827835,
+        "per_seed": [
+          0.503288031565103,
+          0.48388520971302434,
+          0.4725848563968668,
+          0.5303308823529411,
+          0.4974459724950884
+        ]
+      },
+      "sample_count": {
+        "mean": 16670.0,
+        "standard_deviation": 0.0,
+        "per_seed": [
+          16670.0,
+          16670.0,
+          16670.0,
+          16670.0,
+          16670.0
+        ]
+      },
+      "positive_count": {
+        "mean": 1083.0,
+        "standard_deviation": 0.0,
+        "per_seed": [
+          1083.0,
+          1083.0,
+          1083.0,
+          1083.0,
+          1083.0
+        ]
+      },
+      "negative_count": {
+        "mean": 15587.0,
+        "standard_deviation": 0.0,
+        "per_seed": [
+          15587.0,
+          15587.0,
+          15587.0,
+          15587.0,
+          15587.0
+        ]
+      },
+      "alert_count": {
+        "mean": 1230.0,
+        "standard_deviation": 137.97282341098918,
+        "per_seed": [
+          1198.0,
+          1182.0,
+          1215.0,
+          1093.0,
+          1462.0
+        ]
+      },
+      "alert_rate": {
+        "mean": 0.07378524295140972,
+        "standard_deviation": 0.008276714061846978,
+        "per_seed": [
+          0.07186562687462507,
+          0.07090581883623276,
+          0.07288542291541691,
+          0.06556688662267547,
+          0.08770245950809838
+        ]
+      }
+    },
+    "capacity_metrics_mean_and_std": {
+      "average_precision": {
+        "mean": 0.375149827292989,
+        "standard_deviation": 0.04128509261415151,
+        "per_seed": [
+          0.387360210428345,
+          0.3705687801642065,
+          0.3612135579570375,
+          0.4350203448882102,
+          0.3215862430271458
+        ]
+      },
+      "roc_auc": {
+        "mean": 0.8740326672065726,
+        "standard_deviation": 0.004824385113310864,
+        "per_seed": [
+          0.8809807057411825,
+          0.8740679678314688,
+          0.8728444418932105,
+          0.874783310499593,
+          0.8674869100674076
+        ]
+      },
+      "accuracy": {
+        "mean": 0.9342891421715658,
+        "standard_deviation": 0.0010651882951728862,
+        "per_seed": [
+          0.9332333533293341,
+          0.9356928614277145,
+          0.9344331133773245,
+          0.9348530293941212,
+          0.9332333533293341
+        ]
+      },
+      "precision": {
+        "mean": 0.4335646463918149,
+        "standard_deviation": 0.09308065235681012,
+        "per_seed": [
+          0.3611111111111111,
+          0.5679012345679012,
+          0.42424242424242425,
+          0.47761194029850745,
+          0.33695652173913043
+        ]
+      },
+      "recall": {
+        "mean": 0.03250230840258541,
+        "standard_deviation": 0.0067031177886912405,
+        "per_seed": [
+          0.036011080332409975,
+          0.04247460757156048,
+          0.02585410895660203,
+          0.029547553093259463,
+          0.028624192059095107
+        ]
+      },
+      "f1": {
+        "mean": 0.06033702979969342,
+        "standard_deviation": 0.01214588276329928,
+        "per_seed": [
+          0.06549118387909321,
+          0.07903780068728522,
+          0.04873803307223673,
+          0.05565217391304348,
+          0.05276595744680851
+        ]
+      },
+      "sample_count": {
+        "mean": 16670.0,
+        "standard_deviation": 0.0,
+        "per_seed": [
+          16670.0,
+          16670.0,
+          16670.0,
+          16670.0,
+          16670.0
+        ]
+      },
+      "positive_count": {
+        "mean": 1083.0,
+        "standard_deviation": 0.0,
+        "per_seed": [
+          1083.0,
+          1083.0,
+          1083.0,
+          1083.0,
+          1083.0
+        ]
+      },
+      "negative_count": {
+        "mean": 15587.0,
+        "standard_deviation": 0.0,
+        "per_seed": [
+          15587.0,
+          15587.0,
+          15587.0,
+          15587.0,
+          15587.0
+        ]
+      },
+      "alert_count": {
+        "mean": 82.8,
+        "standard_deviation": 17.711578134090708,
+        "per_seed": [
+          108.0,
+          81.0,
+          66.0,
+          67.0,
+          92.0
+        ]
+      },
+      "alert_rate": {
+        "mean": 0.004967006598680264,
+        "standard_deviation": 0.0010624821916071208,
+        "per_seed": [
+          0.00647870425914817,
+          0.0048590281943611275,
+          0.003959208158368326,
+          0.004019196160767846,
+          0.005518896220755849
+        ]
+      }
+    },
+    "f1_alert_rate_mean_and_std": {
+      "transaction_count": {
+        "mean": 67504.0,
+        "standard_deviation": 0.0,
+        "per_seed": [
+          67504.0,
+          67504.0,
+          67504.0,
+          67504.0,
+          67504.0
+        ]
+      },
+      "alert_count": {
+        "mean": 5543.0,
+        "standard_deviation": 890.051403009961,
+        "per_seed": [
+          5729.0,
+          4987.0,
+          5367.0,
+          4666.0,
+          6966.0
+        ]
+      },
+      "alert_rate": {
+        "mean": 0.08211365252429485,
+        "standard_deviation": 0.013185165368125754,
+        "per_seed": [
+          0.08486904479734535,
+          0.07387710357904717,
+          0.07950639962076321,
+          0.06912182981749229,
+          0.10319388480682626
+        ]
+      }
+    },
+    "capacity_alert_rate_mean_and_std": {
+      "transaction_count": {
+        "mean": 67504.0,
+        "standard_deviation": 0.0,
+        "per_seed": [
+          67504.0,
+          67504.0,
+          67504.0,
+          67504.0,
+          67504.0
+        ]
+      },
+      "alert_count": {
+        "mean": 676.0,
+        "standard_deviation": 0.0,
+        "per_seed": [
+          676.0,
+          676.0,
+          676.0,
+          676.0,
+          676.0
+        ]
+      },
+      "alert_rate": {
+        "mean": 0.010014221379473809,
+        "standard_deviation": 0.0,
+        "per_seed": [
+          0.010014221379473809,
+          0.010014221379473809,
+          0.010014221379473809,
+          0.010014221379473809,
+          0.010014221379473809
+        ]
+      }
+    }
+  },
+  "capacity_policy": {
+    "fraction": 0.01,
+    "selection": "deterministic_top_k",
+    "ranking": "descending_probability",
+    "tie_break": "ascending_transaction_id",
+    "uses_labels": false,
+    "validation_and_test": "The same predeclared capacity fraction is applied independently to each period."
+  },
+  "ensemble": {
+    "description": "Mean probability across five seeds. Saved for descriptive analysis only; no ensemble threshold was selected or applied."
+  },
+  "methodology_notes": [
+    "Each seed uses its own validation-calibrated F1 threshold.",
+    "F1 thresholds use labelled validation targets only.",
+    "Capacity ranking uses all new transactions in each period.",
+    "Capacity ranking does not use labels.",
+    "Capacity selection breaks score ties by ascending transaction ID.",
+    "The test graph view is constructed after validation calibration.",
+    "Test metrics are exploratory, not untouched holdout results.",
+    "Seed variability is not temporal generalisation uncertainty."
+  ]
+}

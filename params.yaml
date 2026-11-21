@@ -98,6 +98,7 @@ gnn:
 evaluation:
   primary_metric: average_precision
   threshold_selection: validation_only
+  alert_fraction: 0.01
 
   report_metrics:
     - average_precision

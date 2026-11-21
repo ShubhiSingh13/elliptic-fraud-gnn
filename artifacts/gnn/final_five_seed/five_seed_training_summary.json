@@ -1,0 +1,71 @@
+{
+  "status": "completed",
+  "experiment": "final_five_seed_directed_graphsage",
+  "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "learning_rate": 0.01,
+  "learning_rate_source": "/Users/shubhisingh/Projects/elliptic-fraud-gnn/artifacts/gnn/learning_rate_pilot_summary.json",
+  "selection_metric": "validation_average_precision",
+  "validation_average_precision": {
+    "per_seed": {
+      "42": 0.9455689513706658,
+      "43": 0.9365740395276608,
+      "44": 0.9368252039985497,
+      "45": 0.9516077263356607,
+      "46": 0.9311418458427888
+    },
+    "mean": 0.940343553415065,
+    "standard_deviation": 0.008146253973287193,
+    "minimum": 0.9311418458427888,
+    "maximum": 0.9516077263356607
+  },
+  "test_graph_view_constructed": false,
+  "test_set_used_for_training_or_selection": false,
+  "results": [
+    {
+      "seed": 42,
+      "learning_rate": 0.01,
+      "best_epoch": 130,
+      "best_validation_average_precision": 0.9455689513706658,
+      "checkpoint": "/Users/shubhisingh/Projects/elliptic-fraud-gnn/artifacts/gnn/final_five_seed/gnn_seed_42_lr_0.01.pt",
+      "history": "/Users/shubhisingh/Projects/elliptic-fraud-gnn/artifacts/gnn/final_five_seed/history_seed_42_lr_0.01.json"
+    },
+    {
+      "seed": 43,
+      "learning_rate": 0.01,
+      "best_epoch": 45,
+      "best_validation_average_precision": 0.9365740395276608,
+      "checkpoint": "/Users/shubhisingh/Projects/elliptic-fraud-gnn/artifacts/gnn/final_five_seed/gnn_seed_43_lr_0.01.pt",
+      "history": "/Users/shubhisingh/Projects/elliptic-fraud-gnn/artifacts/gnn/final_five_seed/history_seed_43_lr_0.01.json"
+    },
+    {
+      "seed": 44,
+      "learning_rate": 0.01,
+      "best_epoch": 44,
+      "best_validation_average_precision": 0.9368252039985497,
+      "checkpoint": "/Users/shubhisingh/Projects/elliptic-fraud-gnn/artifacts/gnn/final_five_seed/gnn_seed_44_lr_0.01.pt",
+      "history": "/Users/shubhisingh/Projects/elliptic-fraud-gnn/artifacts/gnn/final_five_seed/history_seed_44_lr_0.01.json"
+    },
+    {
+      "seed": 45,
+      "learning_rate": 0.01,
+      "best_epoch": 166,
+      "best_validation_average_precision": 0.9516077263356607,
+      "checkpoint": "/Users/shubhisingh/Projects/elliptic-fraud-gnn/artifacts/gnn/final_five_seed/gnn_seed_45_lr_0.01.pt",
+      "history": "/Users/shubhisingh/Projects/elliptic-fraud-gnn/artifacts/gnn/final_five_seed/history_seed_45_lr_0.01.json"
+    },
+    {
+      "seed": 46,
+      "learning_rate": 0.01,
+      "best_epoch": 46,
+      "best_validation_average_precision": 0.9311418458427888,
+      "checkpoint": "/Users/shubhisingh/Projects/elliptic-fraud-gnn/artifacts/gnn/final_five_seed/gnn_seed_46_lr_0.01.pt",
+      "history": "/Users/shubhisingh/Projects/elliptic-fraud-gnn/artifacts/gnn/final_five_seed/history_seed_46_lr_0.01.json"
+    }
+  ]
+}
